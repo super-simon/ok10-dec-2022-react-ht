@@ -1,4 +1,4 @@
-import simpsonsCharacterInterface from "../interfaces/simpsonCharacter.interface";
+import simpsonsCharacterInterface from "../../interfaces/simpsonCharacter.interface";
 
 export default function SimpsonsItem({
   character,

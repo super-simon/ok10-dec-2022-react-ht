@@ -1,4 +1,4 @@
-import rickAndMortyCharacterInterface from "../interfaces/rickAndMortyCharacter.interface";
+import rickAndMortyCharacterInterface from "../../interfaces/rickAndMortyCharacter.interface";
 
 export default function RickAndMortyItem({
   character,
