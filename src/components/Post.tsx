@@ -8,7 +8,7 @@ interface PostPropsInterface {
 export default function Post({ post, selectPost }: PostPropsInterface) {
   return (
     <span onClick={selectPost} className="post__title" data-body={post.body}>
-      {post.title}
+      {`${post.id}. ${post.title}`}
     </span>
   );
 }
