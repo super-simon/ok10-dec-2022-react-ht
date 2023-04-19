@@ -1,8 +1,23 @@
 export default interface userInterface {
-  flight_number: number;
-  mission_name: string;
-  launch_year: string;
-  links: {
-    mission_patch_small: string;
+  id: number;
+  name: string;
+  email: string;
+  phone: string;
+  username: string;
+  website: string;
+  company: {
+    bs: string;
+    catchPhrase: string;
+    name: string;
+  };
+  address: {
+    city: string;
+    street: string;
+    suite: string;
+    zipcode: string;
+    get: {
+      lat: string;
+      lng: string;
+    };
   };
 }

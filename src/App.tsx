@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import postInterface from "./interfaces/post.interface";
-import Posts from "./components/Posts";
-import Launches from "./components/Launches";
+import Posts from "./components/Posts/Posts";
+import Launches from "./components/Launches/Launches";
 import launchInterface from "./interfaces/launch.interface";
 import userInterface from "./interfaces/user.interface";
+import Users from "./components/Users/Users";
+import Menu from "./components/Menu/Menu";
 
 function App() {
   const [posts, setPosts] = useState<postInterface[]>([]);
@@ -27,6 +29,7 @@ function App() {
 
     fetch("https://jsonplaceholder.typicode.com/users").then(function (res) {
       res.json().then(function (data: userInterface[]) {
+        console.log(data);
         setUsers(data);
       });
     });
@@ -34,20 +37,10 @@ function App() {
 
   return (
     <div className="App">
-      <ul className="menu">
-        <li>
-          <a href="#posts">Posts</a>
-        </li>
-        <li>
-          <a href="#launches">Starship Launches</a>
-        </li>
-        <li>
-          <a href="#users">Users</a>
-        </li>
-      </ul>
+      <Menu />
       <Posts data={posts} id="posts" />
       <Launches data={launches} id="launches" />
-      {/* <Users data={users} id="users  " /> */}
+      <Users data={users} id="users" />
     </div>
   );
 }
