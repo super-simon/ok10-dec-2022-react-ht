@@ -1,20 +1,32 @@
 import { useState } from "react";
 import postInterface from "../interfaces/post.interface";
 
-export default function Posts({ data }: { data: postInterface[] }) {
-  const [selectedPostBody, setSelectedPostBody] = useState<string>("");
+export default function Posts({
+  data,
+  id,
+}: {
+  data: postInterface[];
+  id: string;
+}) {
+  const [selectedPostBody, setSelectedPostBody] = useState<string | null>("");
 
-  const selectPost = (body: string) => setSelectedPostBody(body);
+  const selectPost = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
+    setSelectedPostBody((e.target as HTMLElement).getAttribute("data-body"));
+  };
 
   return (
     <>
-      <h2>Selected Post</h2>
+      <h2 id={id}>Selected Post</h2>
       <div className="selectedPost__body">{selectedPostBody}</div>
       <h2>Posts</h2>
       <ul className="post__container">
         {data.map((post) => (
           <li key={post.id} className="post">
-            <span onClick={selectPost} className="post__title">
+            <span
+              onClick={selectPost}
+              className="post__title"
+              data-body={post.body}
+            >
               {post.title}
             </span>
           </li>
