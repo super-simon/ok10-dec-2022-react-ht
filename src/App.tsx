@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div className="App">
-      <ul>
+      <ul className="menu">
         <li>
           <a href="#posts">Posts</a>
         </li>
@@ -46,7 +46,7 @@ function App() {
         </li>
       </ul>
       <Posts data={posts} id="posts" />
-      <Launches data={launches} id="launches  " />
+      <Launches data={launches} id="launches" />
       {/* <Users data={users} id="users  " /> */}
     </div>
   );

@@ -1,4 +1,5 @@
 import launchInterface from "../interfaces/launch.interface";
+import Launch from "./Launch";
 
 export default function Launches({
   data,
@@ -13,12 +14,7 @@ export default function Launches({
       <ul className="launch__container">
         {data.map((launch) => (
           <li key={launch.flight_number} className="launch">
-            <img
-              className="launch__img"
-              src={launch.links.mission_patch_small}
-              alt={launch.mission_name}
-            />
-            <span className="launch__title">{`${launch.mission_name} (${launch.launch_year})`}</span>
+            <Launch launch={launch} />
           </li>
         ))}
       </ul>

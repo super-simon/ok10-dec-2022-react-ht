@@ -1,5 +1,6 @@
 import { useState } from "react";
 import postInterface from "../interfaces/post.interface";
+import Post from "./Post";
 
 export default function Posts({
   data,
@@ -22,13 +23,7 @@ export default function Posts({
       <ul className="post__container">
         {data.map((post) => (
           <li key={post.id} className="post">
-            <span
-              onClick={selectPost}
-              className="post__title"
-              data-body={post.body}
-            >
-              {post.title}
-            </span>
+            <Post selectPost={selectPost} post={post} />
           </li>
         ))}
       </ul>
