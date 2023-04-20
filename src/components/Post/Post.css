@@ -1,0 +1,9 @@
+.post__title {
+  cursor: pointer;
+}
+
+.selectedPost__body {
+  margin: 2rem 0;
+  padding: 0.5rem;
+  border: 4px solid gray;
+}

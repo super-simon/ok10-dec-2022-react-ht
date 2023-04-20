@@ -7,6 +7,9 @@ import launchInterface from "./interfaces/launch.interface";
 import userInterface from "./interfaces/user.interface";
 import Users from "./components/Users/Users";
 import Menu from "./components/Menu/Menu";
+import { userService } from "./services/user.service";
+import { postService } from "./services/post.service";
+import { launchService } from "./services/launch.service";
 
 function App() {
   const [posts, setPosts] = useState<postInterface[]>([]);
@@ -14,22 +17,21 @@ function App() {
   const [users, setUsers] = useState<userInterface[]>([]);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts").then(function (res) {
+    postService.getAll().then(function (res) {
       res.json().then(function (data: postInterface[]) {
         setPosts(data);
       });
     });
 
-    fetch("https://api.spacexdata.com/v3/launches/").then(function (res) {
+    launchService.getAll().then(function (res) {
       res.json().then(function (data: launchInterface[]) {
         data = data.filter((item) => item.launch_year != "2020");
         setLaunches(data);
       });
     });
 
-    fetch("https://jsonplaceholder.typicode.com/users").then(function (res) {
+    userService.getAll().then(function (res) {
       res.json().then(function (data: userInterface[]) {
-        console.log(data);
         setUsers(data);
       });
     });

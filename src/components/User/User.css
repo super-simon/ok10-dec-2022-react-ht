@@ -1,0 +1,12 @@
+.user__name {
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.user__button {
+  padding: 1rem;
+  font-size: 1rem;
+  width: auto;
+  cursor: pointer;
+}

@@ -1,0 +1,28 @@
+.launch__container {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.launch {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+  width: calc(25% - 1rem);
+}
+
+@media (max-width: 60rem) {
+  .launch {
+    width: calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 40rem) {
+  .launch {
+    width: 100%;
+  }
+}
