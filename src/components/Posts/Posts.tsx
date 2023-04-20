@@ -18,8 +18,12 @@ export default function Posts({
 
   return (
     <>
-      <h2 id={id}>Selected Post</h2>
-      <div className="selectedPost__body">{selectedPostBody}</div>
+      {selectedPostBody && (
+        <>
+          <h2 id={id}>Selected Post</h2>
+          <div className="selectedPost__body">{selectedPostBody}</div>
+        </>
+      )}
       <h2>Posts</h2>
       <ul className="post__container">
         {data.map((post) => (
