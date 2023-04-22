@@ -1,0 +1,15 @@
+.car__list {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.car__list-item {
+  width: calc(20% - 0.8rem);
+  border: 1px solid lightgray;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+}

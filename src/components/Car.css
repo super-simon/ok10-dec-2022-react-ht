@@ -1,0 +1,12 @@
+.car__brand {
+  font-size: 1.8rem;
+  margin: 0.5rem;
+  text-align: center;
+}
+
+.car__buttons {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.8rem;
+  margin: 0.5rem;
+}

@@ -1,22 +1,25 @@
 import { FC } from "react";
 import { ICar } from "../interfaces/car.interface";
 import { FaRegEdit, FaWindowClose } from "react-icons/fa";
+import "./Car.css";
 
 interface IProps {
   car: ICar;
-  setCarForUpdate: React.Dispatch<React.SetStateAction<ICar | undefined>>;
+  prepareUpdateCarForm: (car: ICar) => void;
   deleteCar: (id: number) => void;
 }
 
-const Car: FC<IProps> = ({ car, setCarForUpdate, deleteCar }) => {
+const Car: FC<IProps> = ({ car, prepareUpdateCarForm, deleteCar }) => {
   const { id, brand, price, year } = car;
   return (
     <div>
-      <div>brand: {brand}</div>
+      <div className="car__brand">{brand}</div>
       <div>price: {price}</div>
       <div>year: {year}</div>
-      <FaRegEdit onClick={() => setCarForUpdate(car)} />
-      <FaWindowClose onClick={() => deleteCar(id)} />
+      <div className="car__buttons">
+        <FaRegEdit onClick={() => prepareUpdateCarForm(car)} />
+        <FaWindowClose onClick={() => deleteCar(id)} />
+      </div>
     </div>
   );
 };

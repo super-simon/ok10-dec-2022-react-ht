@@ -4,6 +4,7 @@ import { carService } from "../services/car.service";
 import { FC, useEffect } from "react";
 import { joiResolver } from "@hookform/resolvers/joi";
 import { carValidator } from "./validators/car.validator";
+import "./CarForm.css";
 
 interface IProps {
   setReloadCarsTrigger: React.Dispatch<React.SetStateAction<boolean>>;
@@ -24,6 +25,8 @@ const CarForm: FC<IProps> = ({ setReloadCarsTrigger, carForUpdate }) => {
       setValue("brand", carForUpdate.brand, { shouldValidate: true });
       setValue("price", carForUpdate.price, { shouldValidate: true });
       setValue("year", carForUpdate.year, { shouldValidate: true });
+    } else {
+      reset();
     }
   }, [carForUpdate]);
 
@@ -75,7 +78,9 @@ const CarForm: FC<IProps> = ({ setReloadCarsTrigger, carForUpdate }) => {
       />
       {errors.year && <span>{errors.year.message}</span>}
       <button disabled={!isValid}>{carForUpdate ? "Update" : "Create"}</button> */}
-
+      {carForUpdate && (
+        <div className="car-for-update-id">id: {carForUpdate.id}</div>
+      )}
       <input type="text" placeholder="brand" {...register("brand")} />
       {errors.brand && <span>{errors.brand.message}</span>}
       <input type="text" placeholder="price" {...register("price")} />

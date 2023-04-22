@@ -3,11 +3,14 @@ import { ICar } from "../interfaces/car.interface";
 import { carService } from "../services/car.service";
 import Car from "./Car";
 import CarForm from "./CarForm";
+import { FaPlusSquare } from "react-icons/fa";
+import "./Cars.css";
 
 const Cars = () => {
   const [cars, setCars] = useState<ICar[]>([]);
   const [reloadCarsTrigger, setReloadCarsTrigger] = useState<boolean>(true);
   const [carForUpdate, setCarForUpdate] = useState<ICar | undefined>();
+  const [showAddNewCarForm, setShowAddNewCarForm] = useState<boolean>(false);
 
   useEffect(() => {
     carService
@@ -21,21 +24,38 @@ const Cars = () => {
     setReloadCarsTrigger((value) => !value);
   };
 
+  const prepareUpdateCarForm = (car: ICar) => {
+    setShowAddNewCarForm(true);
+    setCarForUpdate(car);
+  };
+
+  const addCarButton = () => {
+    setShowAddNewCarForm(true);
+    setCarForUpdate(undefined);
+  };
+
   return (
     <div>
-      <CarForm
-        setReloadCarsTrigger={setReloadCarsTrigger}
-        carForUpdate={carForUpdate}
-      />
-      <hr />
-      {cars.map((car) => (
-        <Car
-          car={car}
-          key={car.id}
-          setCarForUpdate={setCarForUpdate}
-          deleteCar={deleteCar}
+      <h2 id="cars">Cars</h2>
+      <FaPlusSquare onClick={addCarButton} />
+      {showAddNewCarForm && (
+        <CarForm
+          setReloadCarsTrigger={setReloadCarsTrigger}
+          carForUpdate={carForUpdate}
         />
-      ))}
+      )}
+      <hr />
+      <ul className="car__list">
+        {cars.map((car) => (
+          <li key={car.id} className="car__list-item">
+            <Car
+              car={car}
+              prepareUpdateCarForm={prepareUpdateCarForm}
+              deleteCar={deleteCar}
+            />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
