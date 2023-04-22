@@ -16,15 +16,25 @@ const Cars = () => {
       .then((value) => setCars(value));
   }, [reloadCarsTrigger]);
 
+  const deleteCar = async (id: number) => {
+    await carService.delete(id);
+    setReloadCarsTrigger((value) => !value);
+  };
+
   return (
     <div>
       <CarForm
-        setNeedToUpdateList={setReloadCarsTrigger}
+        setReloadCarsTrigger={setReloadCarsTrigger}
         carForUpdate={carForUpdate}
       />
       <hr />
       {cars.map((car) => (
-        <Car car={car} key={car.id} setCarForUpdate={setCarForUpdate} />
+        <Car
+          car={car}
+          key={car.id}
+          setCarForUpdate={setCarForUpdate}
+          deleteCar={deleteCar}
+        />
       ))}
     </div>
   );

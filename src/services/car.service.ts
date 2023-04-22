@@ -6,9 +6,9 @@ const carService = {
   getAll: (): IRes<ICar[]> => axiosCarsService.get(carsUrls.cars),
   create: (car: ICar): IRes<ICar> => axiosCarsService.post(carsUrls.cars, car),
   updateById: (id: number, car: ICar): IRes<ICar> =>
-    axiosCarsService.put(`${carsUrls}/${id}`, car),
+    axiosCarsService.put(`${carsUrls.cars}/${id}`, car),
   delete: (id: number): IRes<void> =>
-    axiosCarsService.delete(`${carsUrls}/${id}`),
+    axiosCarsService.delete(`${carsUrls.cars}/${id}`),
 };
 
 export { carService };

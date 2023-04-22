@@ -6,11 +6,11 @@ import { joiResolver } from "@hookform/resolvers/joi";
 import { carValidator } from "./validators/car.validator";
 
 interface IProps {
-  setNeedToUpdateList: React.Dispatch<React.SetStateAction<boolean>>;
+  setReloadCarsTrigger: React.Dispatch<React.SetStateAction<boolean>>;
   carForUpdate: ICar | undefined;
 }
 
-const CarForm: FC<IProps> = ({ setNeedToUpdateList, carForUpdate }) => {
+const CarForm: FC<IProps> = ({ setReloadCarsTrigger, carForUpdate }) => {
   const {
     reset,
     register,
@@ -29,13 +29,13 @@ const CarForm: FC<IProps> = ({ setNeedToUpdateList, carForUpdate }) => {
 
   const save: SubmitHandler<ICar> = async (car) => {
     await carService.create(car);
-    setNeedToUpdateList((value) => !value);
+    setReloadCarsTrigger((value) => !value);
     reset();
   };
 
   const update: SubmitHandler<ICar> = async (car) => {
-    await carService.updateById(car.id, car);
-    setNeedToUpdateList((value) => !value);
+    await carService.updateById(carForUpdate!.id, car);
+    setReloadCarsTrigger((value) => !value);
   };
 
   return (
