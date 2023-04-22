@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import User from "../User/User";
 import "./Users.css";
-import UserPost from "../UserPost/UserPost";
 import IPost from "../../interfaces/post.interface";
 import { postService } from "../../services/post.service";
 import IUser from "../../interfaces/user.interface";
