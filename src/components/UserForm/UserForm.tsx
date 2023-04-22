@@ -17,8 +17,7 @@ const UserForm: FC<IProps> = ({ onSuccess }) => {
     handleSubmit,
     formState: { errors, isValid },
   } = useForm<IUser>({ mode: "all", resolver: joiResolver(userValidator) });
-  console.log("isValid", isValid);
-  console.log("errors", errors);
+
   const save: SubmitHandler<IUser> = async (user) => {
     await userService
       .create(user)

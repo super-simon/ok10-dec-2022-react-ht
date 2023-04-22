@@ -20,7 +20,7 @@ export default function Users() {
 
   const changeUser = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const selectedUserId = (e.target as HTMLElement).getAttribute("data-id");
-    console.log(selectedUserId);
+
     if (selectedUserId) {
       postService
         .getByUserId(selectedUserId)
