@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { ICar } from "../interfaces/car.interface";
-import { carService } from "../services/car.service";
-import Car from "./Car";
-import CarForm from "./CarForm";
+import { ICar } from "../../interfaces/car.interface";
+import { carService } from "../../services/car.service";
+import Car from "../Car/Car";
+import CarForm from "../CarForm/CarForm";
 import { FaPlusSquare } from "react-icons/fa";
 import "./Cars.css";
 

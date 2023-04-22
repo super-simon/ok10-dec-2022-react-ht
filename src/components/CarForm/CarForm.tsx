@@ -1,9 +1,9 @@
 import { SubmitHandler, useForm } from "react-hook-form";
-import { ICar } from "../interfaces/car.interface";
-import { carService } from "../services/car.service";
+import { ICar } from "../../interfaces/car.interface";
+import { carService } from "../../services/car.service";
 import { FC, useEffect } from "react";
 import { joiResolver } from "@hookform/resolvers/joi";
-import { carValidator } from "./validators/car.validator";
+import { carValidator } from "../../validators/car.validator";
 import "./CarForm.css";
 
 interface IProps {

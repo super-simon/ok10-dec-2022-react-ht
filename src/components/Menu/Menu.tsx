@@ -9,9 +9,6 @@ export default function Menu() {
       <li>
         <a href="#users">Users</a>
       </li>
-      <li>
-        <a href="#comments">Posts and Comments</a>
-      </li>
     </ul>
   );
 }

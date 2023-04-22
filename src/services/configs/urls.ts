@@ -1,13 +1,14 @@
-const baseURL = "http://jsonplaceholder.typicode.com/";
+const baseUsersURL = "http://jsonplaceholder.typicode.com/";
 const baseCarsURL = "http://owu.linkpc.net/carsAPI/v1";
 
-const urls = {
+const usersURLs = {
   users: "/users",
   comments: "/commens",
+  posts: "/posts",
 };
 
-const carsUrls = {
+const carsURLs = {
   cars: "/cars",
 };
 
-export { baseURL, baseCarsURL, urls, carsUrls };
+export { baseUsersURL, baseCarsURL, usersURLs, carsURLs };

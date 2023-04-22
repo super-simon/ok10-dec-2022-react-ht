@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { ICar } from "../interfaces/car.interface";
+import { ICar } from "../../interfaces/car.interface";
 import { FaRegEdit, FaWindowClose } from "react-icons/fa";
 import "./Car.css";
 
