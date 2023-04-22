@@ -1,4 +1,4 @@
-const baseUsersURL = "http://jsonplaceholder.typicode.com/";
+const baseUsersURL = "https://jsonplaceholder.typicode.com/";
 const baseCarsURL = "http://owu.linkpc.net/carsAPI/v1";
 
 const usersURLs = {

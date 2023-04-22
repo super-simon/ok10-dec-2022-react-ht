@@ -15,7 +15,7 @@ export default interface IUser {
     street: string;
     suite: string;
     zipcode: string;
-    get: {
+    geo: {
       lat: string;
       lng: string;
     };
