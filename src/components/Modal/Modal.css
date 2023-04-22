@@ -1,0 +1,25 @@
+.modal {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  background-color: #1d1a1b77;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.modal__children {
+  width: 30rem;
+  margin: 3rem auto;
+  background-color: rgb(255, 255, 255);
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.modal__close-button-container {
+  text-align: right;
+}
+
+.modal__close-button {
+  font-size: 2rem;
+}
