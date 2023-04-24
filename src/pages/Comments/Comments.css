@@ -1,0 +1,15 @@
+.comment__list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 1rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.comment__item {
+  border: 1px solid lightgray;
+  padding: 1rem;
+  width: calc(20% - 0.8rem);
+}
