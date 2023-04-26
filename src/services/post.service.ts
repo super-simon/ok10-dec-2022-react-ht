@@ -5,5 +5,5 @@ import { urls } from "./configs/urls";
 
 export const postService = {
   getAll: (): IRes<IPost[]> => axiosService.get(urls.posts),
-  getById: (id: number): IRes<IPost> => axiosService.get(urls.posts + "/" + id),
+  getById: (id: number): IRes<IPost> => axiosService.get(urls.postById(id)),
 };

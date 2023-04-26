@@ -5,6 +5,7 @@ const urls = {
   albums: "/albums",
   comments: "/comments",
   posts: "/posts",
+  postById: (id: number) => "/posts/" + id,
 };
 
 export { baseURL, urls };
