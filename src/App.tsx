@@ -1,7 +1,7 @@
 import { Component } from "react";
 import Posts from "./pages/Posts/Posts";
 import Comments from "./pages/Comments/Comments";
-import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Menu from "./components/Menu/Menu";
 import CatsAndDogs from "./pages/CatsAndDogs/CatsAndDogs";
 import "./App.css";

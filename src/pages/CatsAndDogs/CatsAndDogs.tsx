@@ -1,7 +1,15 @@
-import React, { Component } from "react";
+import Cats from "../../components/Cats/Cats";
+import Dogs from "../../components/Dogs/Dogs";
+import "./CatsAndDogs.css";
 
-export default class CatsAndDogs extends Component {
-  render() {
-    return <div>CatsAndDogs</div>;
-  }
+export default function CatsAndDogs() {
+  return (
+    <>
+      <h1>Cats And Dogs</h1>
+      <div className="cats-and-dogs__container">
+        <Cats />
+        <Dogs />
+      </div>
+    </>
+  );
 }

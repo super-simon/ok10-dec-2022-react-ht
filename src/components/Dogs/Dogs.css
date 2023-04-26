@@ -1,0 +1,14 @@
+.dog__container {
+  border: 1px solid lightgrey;
+  padding: 1rem;
+}
+
+.dog__list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dog__item {
+  margin: 1rem 0;
+}
