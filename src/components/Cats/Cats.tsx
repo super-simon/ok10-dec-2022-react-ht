@@ -6,7 +6,7 @@ import Cat from "../Cat/Cat";
 import "./Cats.css";
 
 export default function Cats() {
-  const [state, dispatch] = useAppReducer((state: IReducers) => state.pets);
+  const [state] = useAppReducer((state: IReducers) => state.pets);
 
   return (
     <div className="cat__container">

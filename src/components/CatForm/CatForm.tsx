@@ -7,7 +7,7 @@ import { petsActions } from "../../reducers/pets.reducer";
 import { useAppReducer } from "../../hooks/useAppReducer";
 
 export default function CatForm() {
-  const [state, dispatch] = useAppReducer((state: any) => state.pets);
+  const [, dispatch] = useAppReducer((state: any) => state.pets);
 
   const {
     handleSubmit,

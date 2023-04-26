@@ -6,7 +6,7 @@ import { petsActions } from "../../reducers/pets.reducer";
 type IProps = { dog: IPet };
 
 export default function Dog({ dog }: IProps) {
-  const [state, dispatch] = useAppReducer((state: IReducers) => state.pets);
+  const [, dispatch] = useAppReducer((state: IReducers) => state.pets);
   return (
     <div>
       {dog.name}{" "}

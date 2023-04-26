@@ -6,7 +6,7 @@ import { petsActions } from "../../reducers/pets.reducer";
 type IProps = { cat: IPet };
 
 export default function Cat({ cat }: IProps) {
-  const [state, dispatch] = useAppReducer((state: IReducers) => state.pets);
+  const [, dispatch] = useAppReducer((state: IReducers) => state.pets);
   return (
     <div>
       {cat.name}{" "}

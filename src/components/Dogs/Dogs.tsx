@@ -6,7 +6,7 @@ import DogForm from "../DogForm/DogForm";
 import "./Dogs.css";
 
 export default function Dogs() {
-  const [state, dispatch] = useAppReducer((state: IReducers) => state.pets);
+  const [state] = useAppReducer((state: IReducers) => state.pets);
 
   return (
     <div className="dog__container">
