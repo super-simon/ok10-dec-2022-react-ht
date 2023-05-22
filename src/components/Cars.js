@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { carService } from "../services";
 import { carActions } from "../redux";
 import { Car } from "./Car";
 
@@ -9,10 +8,7 @@ const Cars = () => {
   const { cars, trigger } = useSelector((state) => state.cars);
 
   useEffect(() => {
-    carService
-      .getAll()
-      .then((result) => result.data)
-      .then((value) => dispatch(carActions.setAll(value)));
+    dispatch(carActions.getAll());
   }, [dispatch, trigger]);
 
   return (
